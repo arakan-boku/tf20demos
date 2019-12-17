@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% load widget_tweaks %}
+
+{% block header %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.3/fabric.js"></script>
+{% endblock %}
+
+{% block title %}
+  サンプルその１
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if base64text %}
+    {% else %}
+    <div class="row my-4">
+        <canvas id="canvas" style="border:solid 1px red" width="300" height="300"></canvas>
+    </div>
+    {% endif %}
+    <form action="" method="post">{% csrf_token %}
+        {% if base64text %}
+        <div class="form-group row my-4">
+           	<img src="{{ base64text }}" />
+        </div>
+        <a href="{% url 'canvas01' %}"><h2>もう一回</h2></a>
+        {% else %}
+        <div class="row my-4">
+        	<div class="col-lg-2">       
+	            <button type="submit" class="btn btn-primary">サブミット</button>
+    		</div>
+        	<div class="col-lg-2">       
+                <input type="button" id="tobase64btn" onclick="canvas_to_base64()" value="Base64変換" />
+            </div>
+           	<div class="col-lg-2">       
+                <input type="button" id="clearbtn" onclick="canvas_clear()" value="クリアー" />
+            </div>
+            <div class="col-lg-4"></div>
+        </div>    
+        <div class="form-group row my-4">         
+            {{form.areaone|add_class:"form-control"}}
+        </div>
+        {% endif %} 
+    </form>
+</div>
+<script type="text/javascript" src="{% static "js/canvas01.js" %}"></script>  
+{% endblock %}

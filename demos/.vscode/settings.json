@@ -1,0 +1,18 @@
+{
+    "python.linting.lintOnSave": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.pycodestyleEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--ignore=W293, W504, E501",
+        "--max-complexity",
+        "20"
+    ],
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Args": [
+        "--aggressive",
+        "--aggressive",
+    ],
+    "python.envFile": "C:/gitwork/tf20demos/demos/.env",
+    "python.pythonPath": "C:\\00boku\\99github_work\\.conda\\envs\\demos\\python.exe",
+}
