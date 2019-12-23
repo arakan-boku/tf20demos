@@ -22,4 +22,7 @@ urlpatterns = [
     path('hello/', hello.hello, name='hello'),
     path('demo01/', views.dropdemo, name='dragdrop'),
     path('demo02/', views.freedraw, name='canvas01'),
+    path('demo03/', views.proofread, name='typo'),
+    path('demo04/', views.summarize, name='textsum'),
+    path('demo05/', views.talk_do, name='talk'),
 ]

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load widget_tweaks %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block title %}
+  文章要約デモンストレーション
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <form action="" method="post">{% csrf_token %}
+        <h1>文章の要約</h1>
+        <div class="form-group row my-4">         
+            <label class="col-lg-2 col-form-label"><h4>元文章</h4></label>
+    		<div class="col-lg-6">       
+	            <p class="card-text">{{ areathree }}</p>
+    		</div>
+         </div>
+     </form>
+        <div id="resultarea">
+        {% for txt in results %}
+        	<div class="form-group row my-2">         
+	        	<div class="col-lg-2"><img src="{% static "images/k_boy.png" %}" /></div> 
+     			<div class="p-3 m-1 col-lg-6 bg-primary text-white">       
+	           		{{ txt }}
+	        	</div> 
+        	</div>
+        {% endfor %}
+        </div>
+</div>  
+{% endblock %}

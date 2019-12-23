@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load widget_tweaks %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block title %}
+  文章チェック
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <form action="" method="post">{% csrf_token %}
+        <h1>文章チェック</h1>
+        <div class="form-group row my-4">         
+            <label class="col-lg-2 col-form-label"><h4>{{form.areatwo.label}}</h4></label>
+    		<div class="col-lg-6">       
+	            {{form.areatwo|add_class:"form-control"}}
+    		</div>
+    		<div class="col-lg-2">       
+	            <button type="submit" class="btn btn-primary">送信する</button>
+    		</div>
+        </div>
+     </form>
+     <div id="resultarea">
+        <div class="row my-4">         
+	       	<div class="col-lg-2"><img src="{% static "images/k_boy.png" %}" /></div> 
+     			<div class="col-lg-6 card-text">       
+	           		 {{ rets|safe }}
+	        	</div> 
+        	</div>
+        	<div class="col-lg-2">       
+	            <a href = "{% url 'typo' %}>クリア</a>
+    		</div>
+     </div>
+ </div>  
+{% endblock %}

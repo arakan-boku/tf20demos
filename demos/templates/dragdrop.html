@@ -16,9 +16,18 @@
 <div class="container">
     <form action="" method="post">{% csrf_token %}
         {% if base64text %}
-        <h4>ドロップされたファイル名</h4>
+        <h4>ドロップされた画像</h4>
         <div class="form-group row my-4">
             <img  src="{{ base64text }}" />
+        </div>
+        <div class="form-group row my-4">
+            <h4>英語名：{{ enlabel }}</h4>
+        </div>
+        <div class="form-group row my-4">
+            <h4>日本語：{{ jplabel }}</h4>
+        </div>
+        <div class="form-group row my-4">
+            <h4>確率は：{{ pplabel }}</h4>
         </div>
         <a href="{% url 'dragdrop' %}"><h2>もう一回</h2></a>
         {% else %}
