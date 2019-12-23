@@ -1,15 +1,20 @@
 # tf20demos
 
-ŠÂ‹«\’z
+ç’°å¢ƒæ§‹ç¯‰
 
-‚PDAnacondaƒCƒ“ƒXƒg[ƒ‹
-‚QDconda create -n XXXXXXX python=3.7
-‚RD•K—vƒ‚ƒWƒ…[ƒ‹
+
+ï¼‘ï¼Anacondaã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+
+ï¼’ï¼conda create -n XXXXXXX python=3.7
+
+ï¼“ï¼å¿…è¦ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«
+
 	pip install --upgrade tensorflow
 	pip install django
 	pip install django-bootstrap4
 	pip install django-widget-tweaks
 	pip install "tensorflow_hub==0.4.0"
 	pip install Pillow
+	pip install gensim
 	
 	 
